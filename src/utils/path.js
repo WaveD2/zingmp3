@@ -1,0 +1,20 @@
+const path = {
+  PUBLIC: "/",
+  HOME: "",
+  LOGIN: "login",
+  MY_MUSIC: "mymusic",
+  ZING_CHART: "zing-chart",
+  ZING_CHART_WEEK: "zing-chart-tuan/:title/:id",
+  STAR: "*",
+  ALBUM__TITLE_ID: "album/:title/:id",
+  PLAYLIST__TITLE_ID: "playlist/:title/:id",
+  SEARCH: "tim-kiem",
+  SEARCH_PLAYLIST: "playlist",
+  ALL_SEARCH: "tat-ca",
+  SONG_SEARCH: "bai-hat",
+  ARTISTS: "artist",
+  VIDEO: "video",
+  VIDEO_CLIP: "video-clip/:title/:id.html",
+  HOME_SINGER: ":singer",
+};
+export default path;
