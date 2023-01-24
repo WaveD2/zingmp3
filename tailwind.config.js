@@ -62,11 +62,11 @@ module.exports = {
           },
         },
         "rotate-imgSection": {
-          "0%": {
+          "0% , 100%": {
             "-webkit-transform": "scale(1);",
             transform: "scale(1);",
           },
-          "100%": {
+          "50%": {
             "-webkit-transform": "scale(1.2);",
             transform: "scale(1.2);",
           },

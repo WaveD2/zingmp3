@@ -10,7 +10,7 @@ const { BsFillHeartFill, BsMusicNoteList, HiXMark, FiMoreHorizontal } = icons;
 const VideoClip = () => {
   const dispatch = useDispatch();
   const { id, title } = useParams();
-  console.log(id);
+
   const [dataVideo, setDataVideo] = useState(null);
   useEffect(() => {
     const fetch = async () => {
@@ -20,6 +20,7 @@ const VideoClip = () => {
     };
     fetch();
   }, [id]);
+
   return (
     <div className="mt-6">
       <div className="flex item-center  justify-between mx-6">

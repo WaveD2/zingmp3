@@ -1,4 +1,5 @@
 import axios from "../axios";
+
 export const getHome = () =>
   new Promise(async (resolve, reject) => {
     try {
@@ -12,7 +13,6 @@ export const getHome = () =>
       reject(error);
     }
   });
-
 export const apiGetChart = () =>
   new Promise(async (resolve, reject) => {
     try {

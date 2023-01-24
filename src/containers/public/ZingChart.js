@@ -23,7 +23,6 @@ const ZingChart = () => {
     setTopSongs(dataChart?.data?.data?.RTChart?.items);
     e.target.style.display = "none";
   };
-  console.log(dataChart);
   return (
     <div className=" mx-[59px] mt-5">
       <div>
