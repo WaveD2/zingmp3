@@ -54,7 +54,7 @@ const ZingChartWeek = () => {
         </div>
 
         <div className="">
-          <Scrollbars style={{ width: "100%", height: "260px" }}>
+          <Scrollbars style={{ width: "100%", height: "420px" }}>
             {isListSongs &&
               isListSongs?.items?.map((item, index) => (
                 <SongPlayList

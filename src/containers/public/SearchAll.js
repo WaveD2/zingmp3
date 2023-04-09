@@ -7,7 +7,8 @@ import Video from "./Video";
 const SearchAll = () => {
   const navigate = useNavigate();
   const { dataSearch, isLoading } = useSelector((state) => state.music);
-  let isActiveSearch = dataSearch?.top.objectType === "artist";
+  console.log(isLoading);
+  let isActiveSearch = dataSearch?.top?.objectType === "artist";
   return (
     <div className="mt-2 relative">
       <div className="py-5">
@@ -16,7 +17,7 @@ const SearchAll = () => {
           {isActiveSearch ? (
             <>
               {dataSearch?.artists
-                .filter((item, index) => index < 3)
+                ?.filter((item, index) => index < 3)
                 .map((item, index) => (
                   <div
                     className="flex items-center w-1/3 p-[10px] bg-[#4b206e] rounded-md"
@@ -49,7 +50,7 @@ const SearchAll = () => {
           ) : (
             <>
               {dataSearch?.songs
-                .filter((item, index) => index < 3)
+                ?.filter((item, index) => index < 3)
                 .map((item, index) => (
                   <div
                     className="flex items-center w-1/3 p-[10px] bg-[#4b206e] rounded-md"
@@ -87,7 +88,7 @@ const SearchAll = () => {
         </div>
         <div className="flex flex-wrap">
           {dataSearch?.songs
-            .filter((items, index) => index < 6)
+            ?.filter((items, index) => index < 6)
             .map((item, i) => (
               <SongPlayList
                 item={item}
@@ -132,7 +133,7 @@ const SearchAll = () => {
         </h3>
         <div className="py-5 flex gap-5 items-center ">
           {dataSearch?.artists
-            .filter((items, index) => index < 4)
+            ?.filter((items, index) => index < 4)
             .map((item, i) => (
               <Artists
                 thumbnail={item?.thumbnail}

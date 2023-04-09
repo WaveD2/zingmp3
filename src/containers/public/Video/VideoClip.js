@@ -10,12 +10,10 @@ const { BsFillHeartFill, BsMusicNoteList, HiXMark, FiMoreHorizontal } = icons;
 const VideoClip = () => {
   const dispatch = useDispatch();
   const { id, title } = useParams();
-
   const [dataVideo, setDataVideo] = useState(null);
   useEffect(() => {
     const fetch = async () => {
       const res = await apiGetVideo(id);
-      console.log(res);
       setDataVideo(res?.data.data);
     };
     fetch();
@@ -54,6 +52,7 @@ const VideoClip = () => {
         </div>
         <p className="p-2 h-[44px] leading-10 bg-[#545454] cursor-pointer rounded-full text-[#fff] text-center">
           <HiXMark
+            aria-hidden="true"
             size={28}
             onClick={() => dispatch(actions.setIsVideo(false))}
           />

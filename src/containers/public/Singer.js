@@ -14,6 +14,7 @@ const Singer = () => {
   useEffect(() => {
     const fetch = async () => {
       const res = await apiGetArtist(params.singer);
+      console.log(res);
       setData(res);
       dispatch(actions.setScrollArtist(true));
     };

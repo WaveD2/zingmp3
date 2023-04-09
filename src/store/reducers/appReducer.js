@@ -12,6 +12,7 @@ const initState = {
   rank: null,
   allArtist: null,
   weekChart: null,
+  isLoading: false,
 };
 const appReducer = (state = initState, action) => {
   // action ===   dispatch({

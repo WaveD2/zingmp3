@@ -178,7 +178,7 @@ const Player = () => {
   };
 
   return (
-    <div className="bg-media px-5 h-full flex">
+    <div className="bg-media px-5 h-full flex z-50">
       <div className="w-[30%] flex-auto flex items-center gap-4">
         <img
           src={songInfo?.thumbnail}

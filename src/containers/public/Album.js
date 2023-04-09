@@ -19,17 +19,14 @@ const {
 
 const Album = () => {
   const dispatch = useDispatch();
-  //  data have send navigate - location nhận lấy data này
   const location = useLocation();
   const [playListData, setPlayListData] = useState([]);
-  // const [thumbnailM, setThumbnailM] = useState(false);
   const { isPlay, isLoading } = useSelector((state) => state.music);
   const { title, id } = useParams();
   useEffect(() => {
     const fetchDetailAlbum = async () => {
       dispatch(actions.setLoading(true));
       const response = await apis.apiGetDetailPlaylist(id);
-      // console.log(response?.data?.data?.song?.items);
       dispatch(actions.setLoading(false));
 
       if (response?.data.err === 0) {
@@ -41,7 +38,6 @@ const Album = () => {
   }, [id]);
   useEffect(() => {
     if (location.state?.playAlbum && playListData) {
-      // console.log(playListData);
       const randomSong =
         Math.round(Math.random() * playListData?.song?.items?.length) - 1;
       dispatch(

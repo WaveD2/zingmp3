@@ -5,7 +5,6 @@ import actionTypes from "./actionTypes";
 export const getHomeAction = () => async (dispatch) => {
   try {
     const response = await apis.getHome();
-    // console.log(response?.data.data);
 
     if (response?.data.err === 0) {
       dispatch({

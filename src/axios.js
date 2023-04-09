@@ -1,10 +1,7 @@
 import axios from "axios";
-// console.log(process.env.REACT_APP_SEVER_URL);
-
 const instance = axios.create({
   baseURL: process.env.REACT_APP_SEVER_URL,
 });
-console.log(instance());
 export default instance;
 
 // axios.interceptors.request.use(

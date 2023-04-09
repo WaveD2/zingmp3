@@ -3,8 +3,9 @@ import axios from "../axios";
 export const getHome = () =>
   new Promise(async (resolve, reject) => {
     try {
+      console.log(process.env.REACT_APP_SEVER_URL);
       const response = await axios({
-        url: "/home",
+        url: "api/home",
         method: "get",
       });
       resolve(response);
@@ -17,7 +18,7 @@ export const apiGetChart = () =>
   new Promise(async (resolve, reject) => {
     try {
       const response = await axios({
-        url: "/charthome",
+        url: "api/charthome",
         method: "get",
       });
       console.log(response);

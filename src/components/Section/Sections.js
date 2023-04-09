@@ -14,7 +14,7 @@ const Sections = ({ data, typeSection, title }) => {
       <div className="flex items-center justify-between mt-2">
         <h3 className="text-xl font-bold text-[#fff] hover:text-[pink]">
           {typeSection === "search" || typeSection === "playlist" ? (
-            <span> {title || typeSection}</span>
+            <span> Playlist</span>
           ) : (
             <span>{typeSection}</span>
           )}
