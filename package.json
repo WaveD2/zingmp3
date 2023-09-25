@@ -2,6 +2,7 @@
   "name": "tracker",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://wavedzingmp3.vercel.app/",
   "dependencies": {
     "@highcharts/map-collection": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -11,6 +12,7 @@
     "chart.js": "^4.0.1",
     "highcharts": "^10.2.1",
     "highcharts-react-official": "^3.1.0",
+    "http-proxy-middleware": "^2.0.6",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "react": "^18.2.0",
