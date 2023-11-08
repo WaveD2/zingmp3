@@ -3,7 +3,6 @@ import axios from "../axios";
 export const getHome = () =>
   new Promise(async (resolve, reject) => {
     try {
-      console.log(process.env.REACT_APP_SEVER_URL);
       const response = await axios({
         url: "api/home",
         method: "get",

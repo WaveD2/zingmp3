@@ -33,10 +33,8 @@ export const apiGetDetailPlaylist = (listId) =>
         method: "get",
         params: { id: listId },
       });
-      // console.log(response);
       resolve(response);
     } catch (error) {
-      console.log("music", 404);
       reject(error);
     }
   });
@@ -48,7 +46,6 @@ export const apiGetSearch = (keyword) =>
         method: "get",
         params: { keyword },
       });
-      // console.log(response);
       resolve(response);
     } catch (error) {
       reject(error);
@@ -81,7 +78,6 @@ export const apiGetArtist = (name) =>
           name: name,
         },
       });
-      console.log(response);
       resolve(response);
     } catch (error) {
       reject(error);
