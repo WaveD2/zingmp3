@@ -9,9 +9,7 @@ export const apiGetSong = (songId) =>
       });
       resolve(response);
     } catch (error) {
-      console.log("music", 404);
       reject(error);
-      alert("Bạn hãy mở link server để có API !!! ");
     }
   });
 export const apiGetDetaiSong = (songId) =>
