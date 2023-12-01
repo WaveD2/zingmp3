@@ -1,11 +1,6 @@
 import icons from "./icons";
-const { MdOutlineLibraryMusic, BsDisc, GiChart, RiChatFollowUpLine } = icons;
+const { CiStar, BsDisc, GiChart, RiChatFollowUpLine, GiMusicSpell } = icons;
 export const sidebarMenuLeft = [
-  {
-    path: "mymusic",
-    text: "Cá nhân",
-    icon: <MdOutlineLibraryMusic size={24} />,
-  },
   {
     path: "",
     text: "Khám Phá",
@@ -18,9 +13,15 @@ export const sidebarMenuLeft = [
     icon: <GiChart size={24} />,
   },
   {
-    path: "follow",
-    text: "Theo dõi",
-    icon: <RiChatFollowUpLine size={24} />,
+    path: "moi-phat-hanh",
+    text: "BXH Nhạc mới",
+    icon: <GiMusicSpell size={24} />,
+  },
+
+  {
+    path: "top100",
+    text: "Top 100",
+    icon: <CiStar size={24} />,
   },
 ];
 export const searchPath = [

@@ -14,8 +14,13 @@ const SidebarRight = () => {
   const [isActive, setIsActive] = useState(true);
   const [listSong, setListSong] = useState(null);
   const { curSongData, curSongId, songsRecent, isPlayListAlbum } = useSelector(
-    (state) => state.music
+    (state) => {
+      console.log("state.music", state.music);
+
+      return state.music;
+    }
   );
+
   useEffect(() => {
     // const fetchGetDetailPlaylist = async () => {
     //   const response = await apiGetDetailPlaylist(id);
@@ -58,7 +63,7 @@ const SidebarRight = () => {
       </div>
       {isActive ? (
         <div className="w-full flex-col flex">
-          <Scrollbars style={{ width: "100%", height: "500px" }}>
+          <Scrollbars style={{ width: "100%", height: "1200px" }}>
             <SongBarRight
               thumbnail={curSongData?.thumbnail}
               title={curSongData?.title}
@@ -71,7 +76,7 @@ const SidebarRight = () => {
         </div>
       ) : (
         <div className="w-full flex-col flex">
-          <Scrollbars style={{ width: "100%", height: "500px" }}>
+          <Scrollbars style={{ width: "100%", height: "1200px" }}>
             <SongBarRight dataListSongAlbum={songsRecent} />
           </Scrollbars>
         </div>

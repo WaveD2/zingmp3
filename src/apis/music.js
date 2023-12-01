@@ -97,3 +97,29 @@ export const apiGetVideo = (id) =>
       reject(error);
     }
   });
+export const apiGetTop100 = () =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const response = await axios({
+        url: "api/top100",
+        method: "get",
+      });
+      resolve(response);
+    } catch (error) {
+      console.log("music top", 404);
+      reject(error);
+    }
+  });
+export const apiGetNewSong = () =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const response = await axios({
+        url: "api/newreleasechart",
+        method: "get",
+      });
+      resolve(response);
+    } catch (error) {
+      console.log("music top", 404);
+      reject(error);
+    }
+  });

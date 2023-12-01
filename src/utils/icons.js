@@ -3,6 +3,7 @@ import {
   MdSkipNext,
   MdArrowBackIosNew,
   MdNavigateNext,
+  MdMusicVideo,
 } from "react-icons/md";
 import {
   RiChatFollowUpLine,
@@ -12,6 +13,7 @@ import {
   RiRepeatOneFill,
   RiDeleteBin3Line,
 } from "react-icons/ri";
+import { CiStar } from "react-icons/ci";
 import {
   BsDisc,
   BsFillHeartFill,
@@ -21,7 +23,7 @@ import {
   BsArrowRepeat,
   BsMusicNoteList,
 } from "react-icons/bs";
-import { GiChart, GiMicrophone } from "react-icons/gi";
+import { GiChart, GiMicrophone, GiMusicSpell } from "react-icons/gi";
 import { IoIosArrowBack } from "react-icons/io";
 import { HiXMark } from "react-icons/hi2";
 import { HiOutlineVolumeUp, HiOutlineVolumeOff } from "react-icons/hi";
@@ -34,6 +36,9 @@ import {
   FiMusic,
 } from "react-icons/fi";
 const icons = {
+  MdMusicVideo,
+  CiStar,
+  GiMusicSpell,
   MdOutlineLibraryMusic,
   RiChatFollowUpLine,
   BsDisc,

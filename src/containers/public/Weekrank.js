@@ -46,14 +46,13 @@ const Weekrank = () => {
                     ? "K-Pop"
                     : ""}
                 </h3>
-                <div className=" bg-[#411465] py-2 rounded-md">
+                <div className=" bg-[#411465] py-2 rounded-md h-full">
                   {element[1]?.items
                     ?.filter((item, index) => index < 10)
                     ?.map((item, index) => (
                       <div
                         className="flex gap-3 h-60px items-center px-[10px] py-[5px] 
-                            cursor-pointer rounded-lg hover:bg-bgSection
-                            "
+                            cursor-pointer rounded-lg hover:bg-bgSection "
                         key={index}>
                         <span className="text-[32px] leading-8 font-black text-[#fff] w-1/6">
                           {index + 1}

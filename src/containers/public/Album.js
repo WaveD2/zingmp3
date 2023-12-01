@@ -47,7 +47,6 @@ const Album = () => {
     }
   }, [id, playListData]);
 
-  console.log(playListData);
   return (
     <div className="px-[58px] pt-[20px] relative">
       {isLoading && (

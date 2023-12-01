@@ -7,7 +7,7 @@ const Search = () => {
   return (
     <div className="px-[59px]">
       <nav className="flex items-center h-12 w-full  text-[14px]  border-b border-b-red-100">
-        <h3 className="pr-7 font-extrabold text-[22px] text-[#fff] border-r-[1px] border-[#d692d6]">
+        <h3 className="pr-7 font-extrabold text-[20px] text-[#fff] border-r-[1px] border-[#d692d6]">
           Kết Quả Tìm Kiếm
         </h3>
 

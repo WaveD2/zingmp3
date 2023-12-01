@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as apis from "../apis";
 import icons from "../utils/icons";
@@ -48,7 +48,7 @@ const Player = () => {
         apis.apiGetDetaiSong(curSongId),
         apis.apiGetSong(curSongId),
       ]);
-      // console.log(res1, res2);
+
       setIsLoading(true);
       if (res1.data.err === 0) {
         setSongInfo(res1.data.data);
@@ -72,6 +72,7 @@ const Player = () => {
     };
     fectchDetailSong();
   }, [curSongId]);
+
   // logic handle play
   useEffect(() => {
     intervalId && clearInterval(intervalId);
@@ -93,6 +94,7 @@ const Player = () => {
         handleShuffle();
       } else if (isRepeat) {
         isRepeat === 1 ? handleRepeatOne() : handleNextSong();
+        thumbRef.current.style.cssText = `right : ${0}%`;
       } else {
         audio.pause();
         dispatch(actions.setPlay(false));
@@ -119,13 +121,11 @@ const Player = () => {
   }
   const handleLongMusic = (e) => {
     // tọa độ mà người dùng click vào
-    // console.log(trackRef.current.getBoundingClientRect());
 
     const coordinates = trackRef.current.getBoundingClientRect();
     const longPercentMusic =
       Math.round(((e.clientX - coordinates.left) * 10000) / coordinates.width) /
       100;
-    // console.log(longPercentMusic);
     audio.currentTime = (longPercentMusic * songInfo.duration) / 100;
     setSecond((longPercentMusic * songInfo.duration) / 100);
     thumbRef.current.style.cssText = `right : ${100 - longPercentMusic}%`;
@@ -136,6 +136,7 @@ const Player = () => {
     const longPercentMusic =
       Math.round(((e.clientX - coordinates.left) * 10000) / coordinates.width) /
       100;
+    console.log("longPercentMusic", longPercentMusic);
     audio.volume = longPercentMusic / 100;
     volumeRef.current.style.cssText = `right : ${100 - longPercentMusic}%`;
   };
@@ -146,7 +147,6 @@ const Player = () => {
       isPlayListAlbum?.forEach((item, index) => {
         if (item.encodeId === curSongId) currentSongIndex = index;
       });
-      // console.log(isPlayListAlbum);
       dispatch(
         actions.setCurSongId(isPlayListAlbum[currentSongIndex + 1].encodeId)
       );
@@ -155,7 +155,6 @@ const Player = () => {
   };
   const handlePrevSong = () => {
     let currentSongIndex;
-    console.log(currentSongIndex);
     if (isPlayListAlbum) {
       isPlayListAlbum?.forEach((item, index) => {
         if (item.encodeId === curSongId) currentSongIndex = index;
@@ -175,10 +174,11 @@ const Player = () => {
     let randomIndex = Math.round(Math.random() * isPlayListAlbum.length - 1);
     dispatch(actions.setCurSongId(isPlayListAlbum[randomIndex].encodeId));
     dispatch(actions.setPlay(true));
+    thumbRef.current.style.cssText = `right : ${0}%`;
   };
 
-  return (
-    <div className="bg-media px-5 h-full flex z-50">
+  return songInfo ? (
+    <div className="bg-media px-5 h-[90px] flex bg-slate-400 z-[9999]">
       <div className="w-[30%] flex-auto flex items-center gap-4">
         <img
           src={songInfo?.thumbnail}
@@ -189,9 +189,7 @@ const Player = () => {
           <h3 className="text-[16px] leading-5 text-musicIdol ">
             {songInfo?.album?.title}
           </h3>
-          <p className="text-[12px] text-[#c7c6c6]">
-            {songInfo?.artists[0]?.alias}
-          </p>
+          <p className="text-[12px] text-[#c7c6c6]"></p>
         </div>
         <div className="flex gap-3 text-[#fff] cursor-pointer">
           <span className="p-[5px] h-[26px]">
@@ -320,6 +318,8 @@ const Player = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Fragment />
   );
 };
 

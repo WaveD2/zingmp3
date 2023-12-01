@@ -20,11 +20,11 @@ const SongPlayList = ({ item, typeSection, sectionType, index }) => {
   return (
     <div
       className={`flex items-center border-b border-y-violet-500 text-inFoPlayList text-[14px] leading-[18px] gap-2
-       hover:bg-[#76567c66] ${
-         typeSection === "search" || sectionType === "song"
-           ? " w-1/2 "
-           : " w-full"
-       } `}
+      cursor-pointer hover:bg-[#76567c66] ${
+        typeSection === "search" || sectionType === "song"
+          ? " w-1/2 "
+          : " w-full"
+      } `}
       onClick={() =>
         handlePlayMusicList(
           item?.encodeId,
@@ -35,7 +35,7 @@ const SongPlayList = ({ item, typeSection, sectionType, index }) => {
         )
       }>
       <div
-        className={`flex items-center gap-2  py-2  ${
+        className={`flex items-center gap-2  py-2  cursor-pointer ${
           sectionType === "song" ? "w-5/6" : "w-3/6"
         } `}>
         <div
@@ -49,12 +49,12 @@ const SongPlayList = ({ item, typeSection, sectionType, index }) => {
               {index + 1}
             </span>
           ) : (
-            <FiMusic className="ml-2" />
+            <FiMusic className="ml-2 text-xl" />
           )}
           <img
             src={item?.thumbnail}
             alt="img"
-            className="w-[40px] object-cover rounded-sm"
+            className="w-[50px] h-[50px] object-cover rounded-sm"
           />
           <div className="">
             <h3 className="text-[14px]">
@@ -64,11 +64,6 @@ const SongPlayList = ({ item, typeSection, sectionType, index }) => {
                 ? `${item?.title.slice(0, 30)}...`
                 : item?.title}
             </h3>
-            <span className="text-[12px]">
-              {sectionType === "song"
-                ? `${item?.artistsNames.slice(0, 12)}...`
-                : item?.artistsNames}
-            </span>
           </div>
         </div>
       </div>

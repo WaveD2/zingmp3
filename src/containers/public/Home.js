@@ -20,7 +20,10 @@ const Home = ({ isScroll }) => {
     weekChart,
     allArtist,
     isLoading,
-  } = useSelector((state) => state.app);
+  } = useSelector((state) => {
+    console.log("state.app", state.app);
+    return state.app;
+  });
 
   const [isLoadingHome, setIsLoadingHome] = useState(isLoading);
 

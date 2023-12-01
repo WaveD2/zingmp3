@@ -25,7 +25,7 @@ const SongBarRight = ({
   };
 
   return (
-    <div className="p-2 h-[559px] ">
+    <div className="p-2 mb-[90px]">
       {isActive && (
         <div className="flex flex-col ">
           <div

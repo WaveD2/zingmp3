@@ -7,7 +7,7 @@ import Video from "./Video";
 const SearchAll = () => {
   const navigate = useNavigate();
   const { dataSearch, isLoading } = useSelector((state) => state.music);
-  console.log(isLoading);
+
   let isActiveSearch = dataSearch?.top?.objectType === "artist";
   return (
     <div className="mt-2 relative">

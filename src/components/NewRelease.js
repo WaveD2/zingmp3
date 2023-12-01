@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SongItems from "./SongItems";
 import * as actions from "../store/actions";
+import { useNavigate } from "react-router-dom";
 
 const NewRelease = () => {
   const dispatch = useDispatch();
   const { newRelease } = useSelector((state) => state.app);
+  const navigate = useNavigate();
   const [isActive, setIsActive] = useState(2);
   const [songs, setSongs] = useState([]);
   useEffect(() => {
@@ -23,8 +25,14 @@ const NewRelease = () => {
   return (
     <div className="mt-12 flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-5 font-bold">{newRelease?.title}</h3>
-        <span className="text-xs ">TẤT CẢ</span>
+        <h3 className="text-5 font-bold text-[#FFF]">{newRelease?.title}</h3>
+        <span
+          className="text-xs text-[#ccc]"
+          onClick={() => {
+            navigate(newRelease?.link);
+          }}>
+          TẤT CẢ
+        </span>
       </div>
       <div className="flex item-center gap-2">
         <button

@@ -22,6 +22,8 @@ import path from "./utils/path";
 import * as actions from "./store/actions";
 import ZingChart from "./containers/public/ZingChart";
 import ZingChartWeek from "./containers/public/ZingChartWeek";
+import { SongNew } from "./containers/public/SongNew";
+import { MusicTop100 } from "./containers/public/MusicTop100";
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +44,8 @@ function App() {
             <Route path={path.ZING_CHART_WEEK} element={<ZingChartWeek />} />
             <Route path={path.ALBUM__TITLE_ID} element={<Album />} />
             <Route path={path.PLAYLIST__TITLE_ID} element={<Album />} />
+            <Route path={path.MUSIC_NEW} element={<SongNew />} />
+            <Route path={path.MUSIC_TOP_100} element={<MusicTop100 />} />
             <Route path={path.HOME_SINGER} element={<Singer />} />
             <Route path={path.VIDEO_CLIP} element={<VideoClip />} />
             <Route path={path.SEARCH} element={<Search />}>

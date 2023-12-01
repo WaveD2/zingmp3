@@ -2,7 +2,6 @@ const path = {
   PUBLIC: "/",
   HOME: "",
   LOGIN: "login",
-  MY_MUSIC: "mymusic",
   ZING_CHART: "zing-chart",
   ZING_CHART_WEEK: "zing-chart-tuan/:title/:id",
   STAR: "*",
@@ -16,5 +15,10 @@ const path = {
   VIDEO: "video",
   VIDEO_CLIP: "video-clip/:title/:id.html",
   HOME_SINGER: ":singer",
+  ZING_GROUP: "hub",
+  ZING_MUSIC_ON_TOP: "moi-phat-hanh",
+  MUSIC_TOP_100: "top100",
+  RELEASE_NEW: "new-release/song",
+  MUSIC_NEW: "moi-phat-hanh",
 };
 export default path;
