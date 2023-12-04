@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_SEVER_URL,
+  baseURL: 'https://api-zingmp3-vercel.vercel.app',
   mode: 'cors',
   cache: 'no-cache',
   credentials: 'same-origin' ,
